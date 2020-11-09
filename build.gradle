@@ -1,0 +1,40 @@
+plugins {
+    id "groovy"
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+    id "io.micronaut.application" version '1.0.5'
+}
+
+version "0.1"
+group "net.safri.mn"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+micronaut {
+    runtime "jetty"
+    testRuntime "spock2"
+    processing {
+        incremental true
+        annotations "net.safri.mn.*"
+    }
+}
+
+dependencies {
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+    implementation("javax.annotation:javax.annotation-api")
+    implementation("io.micronaut:micronaut-http-client")
+    runtimeOnly("ch.qos.logback:logback-classic")
+}
+
+mainClassName = "net.safri.mn.Application"
+java {
+    sourceCompatibility = JavaVersion.toVersion('11')
+    targetCompatibility = JavaVersion.toVersion('11')
+}
+
+
+
+

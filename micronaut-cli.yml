@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: net.safri.mn
+testFramework: spock
+sourceLanguage: groovy
+buildTool: gradle
+features: [ annotation-api, app-name, gradle, groovy, groovy-application, http-client, jetty-server, logback, readme, shade, spock, yaml ]
